@@ -1,16 +1,11 @@
 services:
   db:
-    image: postgres:17-alpine
-    container_name: nextjs_postgres_db
+    image: postgres:15
+    container_name: lyceum_db
     restart: always
     environment:
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
-      POSTGRES_DB: mydatabase
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: lyceum_auth
     ports:
       - "5434:5434"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
